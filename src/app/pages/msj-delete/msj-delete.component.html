@@ -1,0 +1,21 @@
+<app-leftmenu></app-leftmenu>
+<div class="container margen">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Favorite</th>
+                <th scope="col">Sender</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let outMail of outMails">
+                <td>{{ outMail.favorite }}</td>
+                <td>{{ outMail.sender }}</td>
+                <td>{{ outMail.subject }}</td>
+                <td>{{ outMail.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

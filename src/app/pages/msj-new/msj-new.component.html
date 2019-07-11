@@ -1,0 +1,41 @@
+<app-leftmenu></app-leftmenu>
+<div class="margen">
+
+    <br>
+    <h4>Redactar un nuevo correo</h4>
+    <hr>
+
+    <form (ngSubmit)="enviar( s )" #s="ngForm">
+        <div>
+
+            <div class="form-group">
+
+                <label for="exampleFormControlInput1">Para:</label>
+                <input name="receiver" [(ngModel)]="mail.receiver" type="email" class="form-control" placeholder="name@example.com" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="exampleFormControlInput1">Asunto:</label>
+                <input name="subject" [(ngModel)]="mail.subject" type="text" class="form-control" ngModel maxlength="50" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="exampleFormControlTextarea1">Example textarea</label>
+                <textarea name="description" [(ngModel)]="mail.description" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+
+            </div>
+
+            <hr>
+
+            <div>
+                <button class="btn btn-block btn-outline-info">Enviar</button>
+            </div>
+
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,8 @@
+POST https://prueba-seleccion-granada.herokuapp.com/send
+
+###
+
+GET https://prueba-seleccion-granada.herokuapp.com/inbox
+
+###
+GET https://prueba-seleccion-granada.herokuapp.com/inbox/delete
