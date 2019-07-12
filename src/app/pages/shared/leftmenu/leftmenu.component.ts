@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-leftmenu',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftmenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(autentico: AuthService) { }
 
   ngOnInit() {
+  }
+
+  salir() {
+
   }
 
 }

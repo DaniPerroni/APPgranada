@@ -1,5 +1,13 @@
 <app-leftmenu></app-leftmenu>
-<div class="container margen">
+<div class="container">
+
+    <div class="row">
+        <input type="text" class="form-control col-8" placeholder="Search e-mail by subject" [(ngModel)]="searchMail" />
+        <select class="form-control col-3 offset-1" [(ngModel)]="selectedLevel">
+            <option *ngFor="let c of selectBy" [ngValue]="c">{{c.name}}</option>
+        </select>
+    </div>
+    <br>
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -10,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let mail of mails">
+            <tr *ngFor="let mail of mails | filtroSearch:searchMail:selectedLevel">
                 <td>{{ mail.favorite }}</td>
                 <td>{{ mail.sender }}</td>
                 <td>{{ mail.subject }}</td>

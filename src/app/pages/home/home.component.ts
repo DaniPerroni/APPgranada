@@ -10,8 +10,16 @@ import { from } from 'rxjs';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  searchMail: string;
   mails;
+
+  selectedValue;
+  selectBy = [
+    { id: 0, name: 'Asunto', type: 'subject' },
+    { id: 1, name: 'Enviado Por', type: 'sender' },
+    { id: 2, name: 'Descripcion', type: 'description' }
+  ];
+  selectedLevel = this.selectBy[0];
 
   constructor(private apiService: ApiService) { }
 

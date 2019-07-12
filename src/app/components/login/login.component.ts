@@ -5,6 +5,10 @@ import { ApiService } from 'src/app/services/api.service';
 import { NgForm } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 
+// authservice
+import { AuthService } from 'src/app/auth/auth.service';
+import { from } from 'rxjs';
+
 
 @Component({
   selector: 'app-login',
@@ -18,12 +22,16 @@ log = new LogModel();
   constructor(
     private apiService: ApiService,
     private router: Router,
-  ) { }
+    private authService: AuthService
+  ) {  }
+
+
 
   ngOnInit() {
   }
 
   login(form: NgForm) {
+
     this.apiService.logIn(this.log).subscribe((user) => {
       console.log(user);
       Swal.fire({
@@ -31,7 +39,8 @@ log = new LogModel();
         title: '¡Bien!',
         text: 'Se ha iniciado correctamente',
       }).then(() => {
-        this.router.navigate(['/inbox'])
+        this.authService.isLoggedIn = true;
+        this.router.navigate(['/inbox']);
       });
     }, (err) => {
       console.log(err);

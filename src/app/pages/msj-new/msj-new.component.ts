@@ -6,6 +6,7 @@ import { from, Subject } from 'rxjs';
 import { MailModel } from '../../models/mail.model';
 import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { AuthService } from '../../auth/auth.service';
 
 
 @Component({
@@ -18,10 +19,16 @@ export class MsjNewComponent implements OnInit {
 // tslint:disable-next-line: new-parens
   mail = new MailModel();
 
-  constructor(private apiService: ApiService) {
-    }
+  draft$;
+
+  constructor(
+    private apiService: ApiService,
+    private authService: AuthService) {
+  }
 
   ngOnInit() {
+    this.draft$ = this.authService.observar;
+    this.draft$.subscribe(data => console.log('esta es la data', data));
   }
 
   enviar( form: NgForm) {
@@ -46,6 +53,10 @@ export class MsjNewComponent implements OnInit {
     });
 
 
+  }
+
+  pushDraft() {
+    this.authService.observame(this.mail);
   }
 
 /////

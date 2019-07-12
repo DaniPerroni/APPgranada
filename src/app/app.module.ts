@@ -20,6 +20,8 @@ import { MsjNewComponent } from './pages/msj-new/msj-new.component';
 import { LeftmenuComponent } from './pages/shared/leftmenu/leftmenu.component';
 import { LoginComponent } from './components/login/login.component';
 import { from } from 'rxjs';
+import { DraftComponent } from './pages/draft/draft.component';
+import { FiltroSearchPipe } from './filtro-search.pipe';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { from } from 'rxjs';
     MsjNewComponent,
     LeftmenuComponent,
     LoginComponent,
+    DraftComponent,
+    FiltroSearchPipe,
   ],
   imports: [
     BrowserModule,

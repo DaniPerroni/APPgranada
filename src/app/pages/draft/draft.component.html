@@ -9,10 +9,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let sent of sents">
-                <td>{{ sent.receiver }}</td>
-                <td>{{ sent.subject }}</td>
-                <td>{{ sent.description }}</td>
+            <tr *ngFor="let d of drafing">
+                <td> {{ d.receiver }} </td>
+                <td> {{ d.subject }} </td>
+                <td> {{ d.description }} </td>
             </tr>
         </tbody>
     </table>
